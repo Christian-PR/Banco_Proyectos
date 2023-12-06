@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" type="text/css" href="/EnterpriseApplicationAVSS-war/faces/jsfcrud.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h1>Administrador</h1>
+        <h2>Agregar nuevo proyecto</h2>
+
+        <h:form>
+
+            <h:panelGrid columns="2">
+                <h:outputLabel>
+                    ID del proyecto: 
+                </h:outputLabel>
+                <h:inputText value="#{control_proyectos.proyecto.idProyecto}">
+
+                </h:inputText>
+                <h:outputLabel>
+                    Nombre del proyecto: 
+                </h:outputLabel>
+                <h:inputText value="#{control_proyectos.proyecto.nombreProyecto}">
+
+                </h:inputText>
+                <h:outputLabel>
+                    Empresa: 
+                </h:outputLabel>
+                <h:inputText value="#{control_proyectos.proyecto.empresa}" validatorMessage="Nombre de la emprresa es requerido">
+
+                </h:inputText>
+                <h:outputLabel>
+                    telefono de contacto: 
+                </h:outputLabel>
+                <h:inputText value="#{control_proyectos.proyecto.telefono}" required="true" validatorMessage="El telefono solo deben ser 10 numeros">
+                    <f:validateRegex pattern="\d+" />
+                </h:inputText>
+                <h:outputLabel>
+                    correo: 
+                </h:outputLabel>
+                <h:inputText value="#{control_proyectos.proyecto.correo}" required="true" validatorMessage="Correo no valido">
+                    <f:validateRegex pattern=".*@.*" />
+                </h:inputText>
+                <h:outputLabel>
+                    No de Residentes: 
+                </h:outputLabel>
+                <h:inputText value="#{control_proyectos.proyecto.numeroResidentes}">
+                    <f:validateDoubleRange minimum="${control_proyectos.minRes}" maximum="${control_proyectos.maxRes}" />
+                </h:inputText>
+                <h:commandButton value="Aceptar" action="proyecto_agregado.xhtml" actionListener="#{control_proyectos.registrar()}"></h:commandButton>
+                
+            </h:panelGrid>
+        </h:form>
+
+        <h:form>
+            <h:commandButton value="Regresar" action="index.xhtml"></h:commandButton>
+        </h:form>
+        
+       
+
+    </body>
+
+</html> 
