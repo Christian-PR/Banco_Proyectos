@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agregar Empresa</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IdEmpresa:" for="idEmpresa" />
+                    <h:inputText id="idEmpresa" value="#{control_empresas.empresa.idEmpresa}" title="IdEmpresa" required="true" requiredMessage="The IdEmpresa field is required."/>
+                    <h:outputLabel value="NombreEmpresa:" for="nombreEmpresa" />
+                    <h:inputText id="nombreEmpresa" value="#{control_empresas.empresa.nombreEmpresa}" title="NombreEmpresa" required="true" requiredMessage="The NombreEmpresa field is required."/>
+                    <h:outputLabel value="Convenio:" for="convenio" />
+                    <h:inputText id="convenio" value="#{control_empresas.empresa.convenio}" title="Convenio" />
+                    <h:outputLabel value="Telefono:" for="telefono" />
+                    <h:inputText id="telefono" value="#{control_empresas.empresa.telefono}" title="Telefono" />
+                    <h:outputLabel value="Direccion:" for="direccion" />
+                    <h:inputText id="direccion" value="#{control_empresas.empresa.direccion}" title="Direccion" />
+                    <h:outputLabel value="Correo:" for="correo" />
+                    <h:inputText id="correo" value="#{control_empresas.empresa.correo}" title="Correo" />
+                    <h:commandButton value="Aceptar" action="proyecto_agregado.xhtml" actionListener="#{control_empresas.registrar()}"></h:commandButton>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>

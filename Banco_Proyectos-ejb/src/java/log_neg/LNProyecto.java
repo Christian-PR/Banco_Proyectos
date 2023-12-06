@@ -25,12 +25,15 @@ public class LNProyecto {
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     
-    public void registrar(Proyecto pf){
-        proyectoFacade.create(pf);
+    public void registrar(Proyecto p){
+        proyectoFacade.create(p);
     }
     
     public List<Proyecto> proyectos(){
         return proyectoFacade.findAll();
     }
     
+    public void eliminar(Proyecto p){
+        proyectoFacade.remove(p);
+    }
 }

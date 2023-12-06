@@ -38,6 +38,11 @@ public class ControlEmpresas implements Serializable {
         lNEmpresa.registrar(empresa);
     }
     
+    public void eliminar(Empresa e){
+        lNEmpresa.eliminar(e);
+    }
+    
+    
     public List<Empresa> getListar(){
         return lNEmpresa.empresas();
     }

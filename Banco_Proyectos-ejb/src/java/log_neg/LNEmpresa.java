@@ -31,4 +31,8 @@ public class LNEmpresa {
     public List<Empresa> empresas(){
         return empresaFacade.findAll();
     }
+    
+    public void eliminar(Empresa em){
+        empresaFacade.remove(em);
+    }
 }

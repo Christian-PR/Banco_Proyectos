@@ -49,6 +49,10 @@ public class ControlProyectos implements Serializable{
     public void registrar(){
         lNProyecto.registrar(proyecto);
     }
+    
+    public void eliminar(Proyecto p){
+        lNProyecto.eliminar(p);
+    }
 
     public String getNombre() {
         return nombre;

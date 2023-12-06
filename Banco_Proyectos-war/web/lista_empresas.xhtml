@@ -51,6 +51,12 @@
                         </f:facet>
                         <h:outputText value="#{item.correo}"/>
                     </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Eliminar"/>
+                        </f:facet>
+                        <h:commandButton value="Eliminar" actionListener="#{control_empresas.eliminar(item)}"></h:commandButton>
+                    </h:column>
                 </h:dataTable>
                 
                 <h:commandButton value="Regresar" action="index.xhtml"></h:commandButton>
