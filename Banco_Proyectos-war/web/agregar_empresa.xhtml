@@ -5,13 +5,14 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Agregar Empresa</title>
+        <link rel="stylesheet" type="text/css" href="./resources/proyectos.css" />
     </h:head>
     <h:body>
         <f:view>
 
 
             <h:form>
-                <h1><h:outputText value="Create/Edit"/></h1>
+                <h1><h:outputText value="Agregar Empresa"/></h1>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="IdEmpresa:" for="idEmpresa" />
                     <h:inputText id="idEmpresa" value="#{control_empresas.empresa.idEmpresa}" title="IdEmpresa" required="true" requiredMessage="The IdEmpresa field is required."/>
@@ -26,8 +27,13 @@
                     <h:outputLabel value="Correo:" for="correo" />
                     <h:inputText id="correo" value="#{control_empresas.empresa.correo}" title="Correo" />
                     <h:commandButton value="Aceptar" action="proyecto_agregado.xhtml" actionListener="#{control_empresas.registrar()}"></h:commandButton>
+                    
                 </h:panelGrid>
             </h:form>
+            <h:form>
+                <h:commandButton value="Regresar" action="lista_empresas.xhtml"></h:commandButton>
+            </h:form>
+            
         </f:view>
 
     </h:body>
