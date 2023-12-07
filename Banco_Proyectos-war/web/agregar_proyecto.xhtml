@@ -2,58 +2,77 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
         <title>Agregar Proyecto</title>
         <link rel="stylesheet" type="text/css" href="/EnterpriseApplicationAVSS-war/faces/jsfcrud.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="./resources/proyectos.css" />
-    </head>
+
+    </h:head>
     <body>
         <h1>Administrador</h1>
         <h2>Agregar nuevo proyecto</h2>
 
         <h:form>
+            <p:growl id="messages" showDetail="false" autoUpdate="true">
 
-            <h:panelGrid columns="2">
-                <h:outputLabel>
+            </p:growl>
+            <h:panelGrid columns="3">
+                <p:outputLabel>
                     ID del proyecto: 
-                </h:outputLabel>
-                <h:inputText value="#{control_proyectos.proyecto.idProyecto}">
+                </p:outputLabel>
+                <p:inputText value="#{control_proyectos.proyecto.idProyecto}" label="ID" id="id">
 
-                </h:inputText>
-                <h:outputLabel>
+                </p:inputText>
+                <p:message for="id" display="icon"/>
+                <p:outputLabel>
                     Nombre del proyecto: 
-                </h:outputLabel>
-                <h:inputText value="#{control_proyectos.proyecto.nombreProyecto}">
+                </p:outputLabel>
+                <p:inputText value="#{control_proyectos.proyecto.nombreProyecto}" required="true" label="Nombre" id="nombre">
 
-                </h:inputText>
-                <h:outputLabel>
+                </p:inputText>
+                <p:message for="nombre" display="icon"/>
+                <p:outputLabel>
                     Empresa: 
-                </h:outputLabel>
-                <h:inputText value="#{control_proyectos.proyecto.empresa}" validatorMessage="Nombre de la emprresa es requerido">
+                </p:outputLabel>
+                <p:inputText value="#{control_proyectos.proyecto.empresa}" validatorMessage="Nombre de la emprresa es requerido" label="Empresa" id="empresa">
 
-                </h:inputText>
-                <h:outputLabel>
-                    telefono de contacto: 
-                </h:outputLabel>
-                <h:inputText value="#{control_proyectos.proyecto.telefono}" required="true" validatorMessage="El telefono solo deben ser 10 numeros">
+                </p:inputText>
+                <p:message for="empresa" display="icon"/>
+
+                <p:outputLabel>
+                    Telefono de contacto: 
+                </p:outputLabel>
+                <p:inputText value="#{control_proyectos.proyecto.telefono}" required="true" validatorMessage="El telefono solo deben ser 10 numeros" label="Telefono" id="telefono">
                     <f:validateRegex pattern="\d+" />
-                </h:inputText>
-                <h:outputLabel>
-                    correo: 
-                </h:outputLabel>
-                <h:inputText value="#{control_proyectos.proyecto.correo}" required="true" validatorMessage="Correo no valido">
+                    <p:ajax update="msgTelefono" event="keyup"/>
+                </p:inputText>
+                <p:message for="telefono" display="icon" id="msgTelefono"/>
+
+                <p:outputLabel>
+                    Correo: 
+                </p:outputLabel>
+                <p:inputText value="#{control_proyectos.proyecto.correo}" required="true" validatorMessage="Correo no valido" label="Correo" id="correo">
                     <f:validateRegex pattern=".*@.*" />
-                </h:inputText>
-                <h:outputLabel>
+                </p:inputText>
+                <p:message for="correo" display="icon"/>
+
+                <p:outputLabel>
                     No de Residentes: 
-                </h:outputLabel>
-                <h:inputText value="#{control_proyectos.proyecto.numeroResidentes}">
+                </p:outputLabel>
+                <p:inputText value="#{control_proyectos.proyecto.numeroResidentes}" label="Residentes" id="residentes">
                     <f:validateDoubleRange minimum="${control_proyectos.minRes}" maximum="${control_proyectos.maxRes}" />
-                </h:inputText>
-                <h:commandButton value="Aceptar" action="proyecto_agregado.xhtml" actionListener="#{control_proyectos.registrar()}"></h:commandButton>
-                
+                </p:inputText>
+                <p:message for="residentes" display="icon"/>
+
+                <p:commandButton value="Aceptar" action="proyecto_agregado.xhtml" actionListener="#{control_proyectos.registrar()}" update="@form" icon="pi pi-check"></p:commandButton>
+
             </h:panelGrid>
         </h:form>
 
@@ -61,8 +80,8 @@
             <h:commandButton value="Ver Lista" action="lista_proyectos.xhtml"></h:commandButton>
             <h:commandButton value="Inicio" action="index.xhtml"></h:commandButton>
         </h:form>
-        
-       
+
+
 
     </body>
 
