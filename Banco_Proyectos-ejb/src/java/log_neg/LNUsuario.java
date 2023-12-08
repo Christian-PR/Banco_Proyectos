@@ -33,4 +33,8 @@ public class LNUsuario {
     public List<Usuario> usuarios(){
         return usuarioFacade.findAll();
     }
+    
+     public Usuario usuarioLog(String name, String pass){
+        return usuarioFacade.usuario(name,pass);
+    }
 }

@@ -3,10 +3,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 5 dic 2023, 21:33:00
+    Created on : 7 dic 2023, 20:13:22
     Author     : angel
 */
-/* style.css */
 
 body {
     font-family: 'Arial', sans-serif;
@@ -51,16 +50,6 @@ table  {
      margin: auto;
 }
  
-tbody tr:last-child  {
-  
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin: auto;
-  
-}
 
 
 
