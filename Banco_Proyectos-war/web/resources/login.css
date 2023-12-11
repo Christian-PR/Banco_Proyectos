@@ -61,7 +61,7 @@ input[type="submit"]{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 10px 0;
+    margin-top: 20px;
     cursor: pointer;
 }
 

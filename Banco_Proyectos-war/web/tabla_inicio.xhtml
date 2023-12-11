@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Proyectos</title>
+        <title>Banco de Proyectos</title>
         <link rel="stylesheet" type="text/css" href="./resources/tablas.css" />
     </h:head>
     <h:body>
@@ -14,15 +14,10 @@
             <h:form>
                 <h1><h:outputText value="Proyectos Disponibles"/></h1>
                 <h:dataTable value="#{control_proyectos.listar}" var="item">
+                    
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="IdProyecto"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idProyecto}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="NombreProyecto"/>
+                            <h:outputText value="Nombre del Proyecto"/>
                         </f:facet>
                         <h:outputText value="#{item.nombreProyecto}"/>
                     </h:column>
@@ -46,20 +41,13 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="NumeroResidentes"/>
+                            <h:outputText value="Numero de Residentes"/>
                         </f:facet>
                         <h:outputText value="#{item.numeroResidentes}"/>
                     </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="seleccionar"/>
-                        </f:facet>
-                        <h:commandButton value="Eliminar" actionListener="#{control_proyectos.eliminar(item)}"></h:commandButton>
-                    </h:column>
                 </h:dataTable>
-                <h:commandButton value="Inicio" action="index.xhtml"></h:commandButton>
-                <h:commandButton value="Agregar Proyecto" action="agregar_proyecto.xhtml"></h:commandButton>
                 
+                <h:commandButton value="Login" action="login.xhtml"></h:commandButton>
             </h:form>
         </f:view>
 
