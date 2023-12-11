@@ -55,7 +55,7 @@
                         <f:facet name="header">
                             <h:outputText value="Eliminar"/>
                         </f:facet>
-                        <h:commandButton value="Eliminar" actionListener="#{control_empresas.eliminar(item)}"></h:commandButton>
+                        <h:commandButton value="Eliminar" actionListener="#{control_empresas.eliminar(item)}" onclick="return confirm('¿Estás seguro de que quieres eliminar esta empresa?');"></h:commandButton>
                     </h:column>
                 </h:dataTable>
                 
