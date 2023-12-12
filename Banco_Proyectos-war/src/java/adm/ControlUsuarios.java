@@ -15,6 +15,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import log_neg.LNUsuario;
 import modelo.Usuario;
+import javax.faces.context.ExternalContext;
+import java.io.IOException;
 
 /**
  *
@@ -49,20 +51,30 @@ public class ControlUsuarios implements Serializable {
         usuario = new Usuario();
     }
 
-    public String log() {
+    public void log() {
         String us = usuario.getNombreUsuario();
         String pass = usuario.getContrasenia();
         FacesMessage mensaje;
         if (lNUsuario.usuarioLog(us, pass) != null) {
-            return "index";
+            ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+            try {
+                externalContext.redirect("index.xhtml"); // Cambia "otraPagina.xhtml" por la URL de la página a la que quieres redirigir
+            } catch (IOException e) {
+                e.printStackTrace(); // Manejo de excepciones, puedes personalizar esto según tus necesidades
+            }
         }
         mensaje = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Usuario no encontrado");
         FacesContext.getCurrentInstance().addMessage(null, mensaje);
-        return "login";
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        try {
+            externalContext.redirect("login.xhtml"); // Cambia "otraPagina.xhtml" por la URL de la página a la que quieres redirigir
+        } catch (IOException e) {
+            e.printStackTrace(); // Manejo de excepciones, puedes personalizar esto según tus necesidades
+        }
 
     }
-    
-     public void validarU(FacesContext context, UIComponent toValidate, Object value) {
+
+    public void validarU(FacesContext context, UIComponent toValidate, Object value) {
         String usuario = (String) value;
         FacesMessage mensaje;
         if (usuario.length() == 0) {
