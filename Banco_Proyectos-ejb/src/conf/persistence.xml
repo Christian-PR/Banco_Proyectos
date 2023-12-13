@@ -5,7 +5,7 @@
     <class>modelo.Empresa</class>
     <class>modelo.Proyecto</class>
     <class>modelo.Usuario</class>
-    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
 </persistence>
