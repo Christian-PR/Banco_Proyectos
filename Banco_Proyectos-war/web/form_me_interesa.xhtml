@@ -13,14 +13,14 @@
 
 
             <h:form>
-                <h1><h:outputText value="Create/Edit"/></h1>
+                <h1><h:outputText value="Datos del Estudiante"/></h1>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Id:" for="id" />
                     <h:inputText id="id" value="#{control_alumnosIn.ai.id}" title="Id" required="true" requiredMessage="The Id field is required."/>
                     <h:outputLabel value="NumeroControl:" for="numeroControl" />
                     <h:inputText id="numeroControl" value="#{control_alumnosIn.ai.numeroControl}" title="NumeroControl" required="true" requiredMessage="The NumeroControl field is required."/>
-                    <h:outputLabel value="Contrasena:" for="contrasena" />
-                    <h:inputText id="correo institucional" value="#{control_alumnosIn.ai.contrasena}" title="Contrasena" required="true" requiredMessage="The Contrasena field is required."/>
+                    <h:outputLabel value="Correo Institucional:" for="contrasena" />
+                    <h:inputText id="contrasena" value="#{control_alumnosIn.ai.contrasena}" title="Correo institucional" required="true" requiredMessage="The Contrasena field is required."/>
                     <h:outputLabel value="Nombre:" for="nombre" />
                     <h:inputText id="nombre" value="#{control_alumnosIn.ai.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
                     <h:outputLabel value="Semestre:" for="semestre" />
@@ -32,7 +32,7 @@
             </h:form>
             <h:form>
                 
-                <h:commandButton value="Inicio" action="index.xhtml"></h:commandButton>
+                <h:commandButton value="Cancelar" action="tabla_inicio.xhtml"></h:commandButton>
             </h:form>
         </f:view>
 

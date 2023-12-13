@@ -41,6 +41,9 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+tr:nth-child(odd) {
+    background-color: #b0cbff;
+}
 
 input[type="submit"] {
     background-color: #4CAF50;

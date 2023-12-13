@@ -4,17 +4,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Proyectos</title>
-        <link rel="stylesheet" type="text/css" href="./resources/tablas.css" />
-           <link rel="stylesheet" type="text/css" href="./resources/inicio.css"/>
+        <title>Proyectos Pasados</title>
+            <link rel="stylesheet" type="text/css" href="./resources/tablas.css" />
+              <link rel="stylesheet" type="text/css" href="./resources/inicio.css"/>
     </h:head>
     <h:body>
         <f:view>
 
 
             <h:form>
-                <h1><h:outputText value="Proyectos Disponibles"/></h1>
-                <h:dataTable value="#{control_proyectos.listar}" var="item">
+                <h1><h:outputText value="Proyectos Pasados"/></h1>
+                <h:dataTable value="#{controlProyectosPasados.lista}" var="item">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="IdProyecto"/>
@@ -53,14 +53,12 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="seleccionar"/>
+                            <h:outputText value="NumeroControlAlumno"/>
                         </f:facet>
-                        <h:commandButton value="Eliminar" actionListener="#{control_proyectos.eliminar(item)}" onclick="return confirm('¿Estás seguro de que quieres eliminar esta empresa?');"></h:commandButton>
+                        <h:outputText value="#{item.numeroControlAlumno}"/>
                     </h:column>
                 </h:dataTable>
                 <h:commandButton value="Inicio" action="index.xhtml"></h:commandButton>
-                <h:commandButton value="Agregar Proyecto" action="agregar_proyecto.xhtml"></h:commandButton>
-                
             </h:form>
         </f:view>
 

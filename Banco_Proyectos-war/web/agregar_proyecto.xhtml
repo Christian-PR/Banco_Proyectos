@@ -13,6 +13,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="./resources/proyectos.css" />
+        <link rel="stylesheet" type="text/css" href="./resources/inicio.css"/>
 
     </h:head>
     <body>
@@ -71,7 +72,7 @@
                 </p:inputText>
                 <p:message for="residentes" display="icon"/>
 
-                <p:commandButton value="Aceptar"  actionListener="#{control_proyectos.registrar()}" update="@form" icon="pi pi-check"></p:commandButton>
+                <p:commandButton value="Aceptar"  actionListener="#{control_proyectos.registrar()}"  update="@form" icon="pi pi-check"></p:commandButton>
 
             </h:panelGrid>
         </h:form>
