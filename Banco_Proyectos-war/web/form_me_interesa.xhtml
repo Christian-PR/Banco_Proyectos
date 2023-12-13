@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="./resources/proyectos.css" />
+        
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Id:" for="id" />
+                    <h:inputText id="id" value="#{control_alumnosIn.ai.id}" title="Id" required="true" requiredMessage="The Id field is required."/>
+                    <h:outputLabel value="NumeroControl:" for="numeroControl" />
+                    <h:inputText id="numeroControl" value="#{control_alumnosIn.ai.numeroControl}" title="NumeroControl" required="true" requiredMessage="The NumeroControl field is required."/>
+                    <h:outputLabel value="Contrasena:" for="contrasena" />
+                    <h:inputText id="correo institucional" value="#{control_alumnosIn.ai.contrasena}" title="Contrasena" required="true" requiredMessage="The Contrasena field is required."/>
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <h:inputText id="nombre" value="#{control_alumnosIn.ai.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <h:outputLabel value="Semestre:" for="semestre" />
+                    <h:inputText id="semestre" value="#{control_alumnosIn.ai.semestre}" title="Semestre" required="true" requiredMessage="The Semestre field is required."/>
+                    <h:outputLabel value="IdProyecto:" for="idProyecto" />
+                    <h:inputText id="idProyecto" value="#{control_alumnosIn.ai.idProyecto}" title="IdProyecto" required="true" requiredMessage="The IdProyecto field is required."/>
+                    <h:commandButton value="Aceptar"  action="tabla_inicio.xhtml" actionListener="#{control_alumnosIn.registrar()}" onclick="return alert('Información guardada con éxito'); "></h:commandButton>
+                </h:panelGrid>
+            </h:form>
+            <h:form>
+                
+                <h:commandButton value="Inicio" action="index.xhtml"></h:commandButton>
+            </h:form>
+        </f:view>
+
+
+    </h:body>
+</html>

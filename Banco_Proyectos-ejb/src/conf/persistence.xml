@@ -5,6 +5,7 @@
     <class>modelo.Empresa</class>
     <class>modelo.Proyecto</class>
     <class>modelo.Usuario</class>
+    <class>modelo.AlumnoInteresado</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
